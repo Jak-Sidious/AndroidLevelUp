@@ -2,7 +2,9 @@
 package adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,11 +44,23 @@ public class GitHubAdaptor extends RecyclerView.Adapter<GitHubAdaptor.UserViewHo
 
     @Override
     public void onBindViewHolder(UserViewHolder holder, int position) {
-        holder.mUserTextView.setText(Users.get(position).Username);
+        final GitHubUsers githubUser = Users.get(position);
+        holder.mUserTextView.setText(githubUser.Username);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent userDetail = new Intent(v.getContext(), DetailActivity.class);
+                userDetail.putExtra("githubUser", githubUser.Username);
+                v.getContext().startActivity(userDetail);
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
         return Users.size();
     }
+
+
 }

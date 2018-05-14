@@ -17,16 +17,16 @@ public class MainActivity extends AppCompatActivity {
     private static ArrayList<GitHubUsers> Users = new ArrayList<>();
 
     static {
-        Users.add(new GitHubUsers("lkajbsdkjasd"));
-        Users.add(new GitHubUsers("lkajbsdkjasd"));
-        Users.add(new GitHubUsers("lkajbsdkjasd"));
-        Users.add(new GitHubUsers("lkajbskjkknbmnmdkjasd"));
-        Users.add(new GitHubUsers("lkajbsdkjasd"));
-        Users.add(new GitHubUsers("ljkhbkhbsd"));
-        Users.add(new GitHubUsers("lkajbsdkjasd"));
-        Users.add(new GitHubUsers("lkajbsdkjasd"));
-        Users.add(new GitHubUsers("lkajbsdmjhjhkjasd"));
-        Users.add(new GitHubUsers("lkajbsdkjasd"));
+        Users.add(new GitHubUsers("James"));
+        Users.add(new GitHubUsers("Leather Face"));
+        Users.add(new GitHubUsers("Jason"));
+        Users.add(new GitHubUsers("Mr Tickles"));
+        Users.add(new GitHubUsers("Bust a shot"));
+        Users.add(new GitHubUsers("Insanity"));
+        Users.add(new GitHubUsers("ISSSS"));
+        Users.add(new GitHubUsers("your"));
+        Users.add(new GitHubUsers("friend"));
+        Users.add(new GitHubUsers("Nyaahhhhclea"));
 
     }
 
