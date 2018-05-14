@@ -17,16 +17,16 @@ public class MainActivity extends AppCompatActivity {
     private static ArrayList<GitHubUsers> Users = new ArrayList<>();
 
     static {
-        Users.add(new GitHubUsers("James"));
-        Users.add(new GitHubUsers("Leather Face"));
-        Users.add(new GitHubUsers("Jason"));
-        Users.add(new GitHubUsers("Mr Tickles"));
-        Users.add(new GitHubUsers("Bust a shot"));
-        Users.add(new GitHubUsers("Insanity"));
-        Users.add(new GitHubUsers("ISSSS"));
-        Users.add(new GitHubUsers("your"));
-        Users.add(new GitHubUsers("friend"));
-        Users.add(new GitHubUsers("Nyaahhhhclea"));
+        Users.add(new GitHubUsers("James", "James Org"));
+        Users.add(new GitHubUsers("Leather Face", "Murder Inc"));
+        Users.add(new GitHubUsers("Jason", "Murder Inc"));
+        Users.add(new GitHubUsers("Mr Tickles", "Isle Of Perpetual Tickling"));
+        Users.add(new GitHubUsers("Bust a shot", "HARAM"));
+        Users.add(new GitHubUsers("Insanity", "Aren't we all"));
+        Users.add(new GitHubUsers("ISSSS", "Was?"));
+        Users.add(new GitHubUsers("your", "my"));
+        Users.add(new GitHubUsers("friend", "Henemy"));
+        Users.add(new GitHubUsers("Nyaahhhhclea", "I don know"));
 
     }
 
