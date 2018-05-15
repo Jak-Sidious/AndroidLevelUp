@@ -17,16 +17,16 @@ public class MainActivity extends AppCompatActivity {
     private static ArrayList<GitHubUsers> Users = new ArrayList<>();
 
     static {
-        Users.add(new GitHubUsers("lkajbsdkjasd"));
-        Users.add(new GitHubUsers("lkajbsdkjasd"));
-        Users.add(new GitHubUsers("lkajbsdkjasd"));
-        Users.add(new GitHubUsers("lkajbskjkknbmnmdkjasd"));
-        Users.add(new GitHubUsers("lkajbsdkjasd"));
-        Users.add(new GitHubUsers("ljkhbkhbsd"));
-        Users.add(new GitHubUsers("lkajbsdkjasd"));
-        Users.add(new GitHubUsers("lkajbsdkjasd"));
-        Users.add(new GitHubUsers("lkajbsdmjhjhkjasd"));
-        Users.add(new GitHubUsers("lkajbsdkjasd"));
+        Users.add(new GitHubUsers("James", "James Org"));
+        Users.add(new GitHubUsers("Leather Face", "Murder Inc"));
+        Users.add(new GitHubUsers("Jason", "Murder Inc"));
+        Users.add(new GitHubUsers("Mr Tickles", "Isle Of Perpetual Tickling"));
+        Users.add(new GitHubUsers("Bust a shot", "HARAM"));
+        Users.add(new GitHubUsers("Insanity", "Aren't we all"));
+        Users.add(new GitHubUsers("ISSSS", "Was?"));
+        Users.add(new GitHubUsers("your", "my"));
+        Users.add(new GitHubUsers("friend", "Henemy"));
+        Users.add(new GitHubUsers("Nyaahhhhclea", "I don know"));
 
     }
 

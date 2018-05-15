@@ -1,14 +1,13 @@
 package com.example.jakanakiwanuka.mrmlevelup;
 
-import java.util.List;
 
 public class GitHubUsers {
     public String Username;
+    public String Organization;
 
-    GitHubUsers(String Username){
+    GitHubUsers(String Username, String Organization){
         this.Username = Username;
+        this.Organization = Organization;
     }
-
-//    private List<GitHubUsers> githubusers;
 
 }

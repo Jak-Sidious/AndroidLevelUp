@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MrmLevelUp</string>
+    <string name="user_image">User Image</string>
+    <string name="Github_username">TextView</string>
+    <string name="github_username">Github UserName</string>
+    <string name="user_organisation">User\'s Organisation</string>
+    <string name="title_activity_detail">detail</string>
 </resources>
