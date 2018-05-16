@@ -1,11 +1,10 @@
-package adapter;
+package githubuser.view;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.example.jakanakiwanuka.mrmlevelup.MainActivity;
 import com.example.jakanakiwanuka.mrmlevelup.R;
 
 public class DetailActivity extends AppCompatActivity {
@@ -18,7 +17,7 @@ public class DetailActivity extends AppCompatActivity {
         // Get the intent that started this activity
         Intent intent = getIntent();
         String message = intent.getStringExtra("githubUser");
-        String message2 = intent.getStringExtra("UserOrg");
+        String message2 = intent.getStringExtra("userOrg");
         TextView textView = findViewById(R.id.userName);
         TextView textView1 = findViewById(R.id.Organisation);
         textView.setText(message);
