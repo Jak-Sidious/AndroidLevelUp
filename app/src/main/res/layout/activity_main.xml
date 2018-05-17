@@ -6,6 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/users_list"
-    tools:context=".MainActivity"
+    tools:context="githubuser.view.MainActivity"
     tools:listitem="@layout/content_main"/>
 

@@ -1,26 +1,26 @@
 //package adaptor;
-package adapter;
+package githubuser.view;
 
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.jakanakiwanuka.mrmlevelup.GitHubUsers;
 import com.example.jakanakiwanuka.mrmlevelup.R;
 
 import java.util.List;
 
+import githubuser.model.GithubUsers;
+
 public class GitHubAdaptor extends RecyclerView.Adapter<GitHubAdaptor.UserViewHolder> {
-    List<GitHubUsers> Users;
+    List<GithubUsers> Users;
     Context context;
 
-    public GitHubAdaptor(List<GitHubUsers> Users, Context context){
+    public GitHubAdaptor(List<GithubUsers> Users, Context context){
         this.Users=Users;
         this.context=context;
     }
@@ -44,15 +44,15 @@ public class GitHubAdaptor extends RecyclerView.Adapter<GitHubAdaptor.UserViewHo
 
     @Override
     public void onBindViewHolder(UserViewHolder holder, int position) {
-        final GitHubUsers githubUser = Users.get(position);
-        holder.mUserTextView.setText(githubUser.Username);
+        final GithubUsers githubUser = Users.get(position);
+        holder.mUserTextView.setText(githubUser.getUserName());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent userDetail = new Intent(v.getContext(), DetailActivity.class);
-                userDetail.putExtra("githubUser", githubUser.Username);
-                userDetail.putExtra("UserOrg", githubUser.Organization);
+                userDetail.putExtra("githubUser", githubUser.getUserName());
+                userDetail.putExtra("userOrg", githubUser.getOrganizationUrl());
                 v.getContext().startActivity(userDetail);
             }
         });

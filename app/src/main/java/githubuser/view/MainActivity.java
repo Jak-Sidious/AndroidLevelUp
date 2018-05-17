@@ -1,32 +1,34 @@
-package com.example.jakanakiwanuka.mrmlevelup;
+package githubuser.view;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.LinearLayoutManager;
 
+import com.example.jakanakiwanuka.mrmlevelup.R;
+
 import java.util.ArrayList;
 
-import adapter.GitHubAdaptor;
+import githubuser.model.GithubUsers;
 
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    private static ArrayList<GitHubUsers> Users = new ArrayList<>();
+    private static ArrayList<GithubUsers> Users = new ArrayList<>();
 
     static {
-        Users.add(new GitHubUsers("James", "James Org"));
-        Users.add(new GitHubUsers("Leather Face", "Murder Inc"));
-        Users.add(new GitHubUsers("Jason", "Murder Inc"));
-        Users.add(new GitHubUsers("Mr Tickles", "Isle Of Perpetual Tickling"));
-        Users.add(new GitHubUsers("Bust a shot", "HARAM"));
-        Users.add(new GitHubUsers("Insanity", "Aren't we all"));
-        Users.add(new GitHubUsers("ISSSS", "Was?"));
-        Users.add(new GitHubUsers("your", "my"));
-        Users.add(new GitHubUsers("friend", "Henemy"));
-        Users.add(new GitHubUsers("Nyaahhhhclea", "I don know"));
+        Users.add(new GithubUsers("James", "James", "James Org"));
+        Users.add(new GithubUsers("baln", "james ","Murder Inc"));
+        Users.add(new GithubUsers("Jason", "james", "Murder Inc"));
+        Users.add(new GithubUsers("Mr Tickles", "Mr tickles", "Isle Of Perpetual Tickling"));
+        Users.add(new GithubUsers("Bust a shot", "HARAM","Haram"));
+        Users.add(new GithubUsers("Insanity", "joker", "Aren't we all"));
+        Users.add(new GithubUsers("ISSSS", "Was?","wasn't it"));
+        Users.add(new GithubUsers("your", "my", "Ours"));
+        Users.add(new GithubUsers("friend", "Henemy", "yass"));
+        Users.add(new GithubUsers("Nyaahhhhclea", "I don know","Neither do i"));
 
     }
 
@@ -42,4 +44,6 @@ public class MainActivity extends AppCompatActivity {
         mAdapter = new GitHubAdaptor(Users, this);
         mRecyclerView.setAdapter(mAdapter);
     }
+
+
 }
