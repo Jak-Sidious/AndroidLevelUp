@@ -52,7 +52,7 @@ public class GitHubAdaptor extends RecyclerView.Adapter<GitHubAdaptor.UserViewHo
             public void onClick(View v) {
                 Intent userDetail = new Intent(v.getContext(), DetailActivity.class);
                 userDetail.putExtra("githubUser", githubUser.getUserName());
-                userDetail.putExtra("userOrg", githubUser.getUserOrg());
+                userDetail.putExtra("userOrg", githubUser.getOrganizationUrl());
                 v.getContext().startActivity(userDetail);
             }
         });

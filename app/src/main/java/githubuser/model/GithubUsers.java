@@ -4,22 +4,30 @@ import com.google.gson.annotations.SerializedName;
 
 public class GithubUsers {
 
-    @SerializedName("userName")
-    private String userName;
+    @SerializedName("login")
+    private String username;
 
-    @SerializedName("userOrg")
-    private String userOrg;
+    @SerializedName("avatar_url")
+    private String profileImage;
 
-    public GithubUsers(String userName, String userOrg){
-        this.userName=userName;
-        this.userOrg=userOrg;
+    @SerializedName("organization_url")
+    private String organizationUrl;
+
+    public GithubUsers(String profileImage, String username, String organizationUrl){
+        this.profileImage=profileImage;
+        this.username=username;
+        this.organizationUrl=organizationUrl;
+    }
+
+    public String getProfileImage() {
+        return profileImage;
     }
 
     public String getUserName() {
-        return userName;
+        return username;
     }
 
-    public String getUserOrg() {
-        return userOrg;
+    public String getOrganizationUrl() {
+        return organizationUrl;
     }
 }
