@@ -16,8 +16,8 @@ public class DetailActivity extends AppCompatActivity {
 
         // Get the intent that started this activity
         Intent intent = getIntent();
-        String message = intent.getStringExtra("githubUser");
-        String message2 = intent.getStringExtra("userOrg");
+        String message = intent.getExtras().getString("githubUser");
+        String message2 = intent.getExtras().getString("userOrg");
         TextView textView = findViewById(R.id.userName);
         TextView textView1 = findViewById(R.id.Organisation);
         textView.setText(message);
