@@ -16,20 +16,35 @@ import java.util.List;
 
 import githubuser.model.GithubUsers;
 
+/**
+ * An adaptor to cater to the generation of the RecyclerView.
+ */
 public class GitHubAdaptor extends RecyclerView.Adapter<GitHubAdaptor.UserViewHolder> {
-    List<GithubUsers> Users;
+    List<GithubUsers> users;
     Context context;
 
-    public GitHubAdaptor(List<GithubUsers> Users, Context context){
-        this.Users=Users;
-        this.context=context;
+    /**
+     * Instance of Github Adaptor declared to enable passing of the data accordingly.
+     * @param users List of created users
+     * @param context data passed to the adaptor
+     */
+    public GitHubAdaptor(List<GithubUsers> users, Context context) {
+        this.users = users;
+        this.context = context;
     }
 
+    /**
+     * View Holder to contain the data of the individual when clicked.
+     */
     public static class UserViewHolder extends RecyclerView.ViewHolder {
         private ImageView mUserImageView;
          TextView mUserTextView;
 
-        public UserViewHolder(View view){
+        /**
+         * Instance of view holder that is not bound to any data yet.
+         * @param view the view containing all the user data.
+         */
+        public UserViewHolder(View view) {
             super(view);
             mUserImageView = view.findViewById(R.id.user_image);
             mUserTextView = view.findViewById(R.id.user_name);
@@ -37,14 +52,15 @@ public class GitHubAdaptor extends RecyclerView.Adapter<GitHubAdaptor.UserViewHo
     }
 
     @Override
-    public UserViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.content_main, parent, false);
+    public UserViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.content_main,
+                parent, false);
         return new UserViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(UserViewHolder holder, int position) {
-        final GithubUsers githubUser = Users.get(position);
+        final GithubUsers githubUser = users.get(position);
         holder.mUserTextView.setText(githubUser.getUserName());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -60,7 +76,7 @@ public class GitHubAdaptor extends RecyclerView.Adapter<GitHubAdaptor.UserViewHo
 
     @Override
     public int getItemCount() {
-        return Users.size();
+        return users.size();
     }
 
 
