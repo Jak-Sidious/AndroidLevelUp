@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import com.example.jakanakiwanuka.mrmlevelup.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import githubuser.model.GithubUsers;
 
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    private static ArrayList users = new ArrayList();
+    private static List users = new ArrayList();
 
     static {
         users.add(new GithubUsers("James", "James", "James Org"));

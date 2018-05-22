@@ -37,7 +37,7 @@ public class GitHubAdaptor extends RecyclerView.Adapter<GitHubAdaptor.UserViewHo
      * View Holder to contain the data of the individual when clicked.
      */
     public static class UserViewHolder extends RecyclerView.ViewHolder {
-        private ImageView mUserImageView;
+        private final ImageView mUserImageView; //change this later
          TextView mUserTextView;
 
         /**

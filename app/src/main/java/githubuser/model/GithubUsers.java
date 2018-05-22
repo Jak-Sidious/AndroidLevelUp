@@ -11,13 +11,13 @@ public class GithubUsers {
  *Model for the Data to be received from github.
  */
     @SerializedName("login")
-    private String username;
+    private final String username; //tochange
 
     @SerializedName("avatar_url")
-    private String profileImage;
+    private final String profileImage; //tochange
 
     @SerializedName("organization_url")
-    private String organizationUrl;
+    private final String organizationUrl; //tochange
 
     /**
      * Create the github users object based on the parameters.
