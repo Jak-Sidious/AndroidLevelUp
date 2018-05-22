@@ -8,27 +8,32 @@ import android.support.v7.widget.LinearLayoutManager;
 import com.example.jakanakiwanuka.mrmlevelup.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import githubuser.model.GithubUsers;
 
+/**
+ * Class that deals with the default data/activity shown when the app loads.
+ * @author jakanakiwanuka
+ */
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    private static ArrayList<GithubUsers> Users = new ArrayList<>();
+    private static List users = new ArrayList();
 
     static {
-        Users.add(new GithubUsers("James", "James", "James Org"));
-        Users.add(new GithubUsers("baln", "james ","Murder Inc"));
-        Users.add(new GithubUsers("Jason", "james", "Murder Inc"));
-        Users.add(new GithubUsers("Mr Tickles", "Mr tickles", "Isle Of Perpetual Tickling"));
-        Users.add(new GithubUsers("Bust a shot", "HARAM","Haram"));
-        Users.add(new GithubUsers("Insanity", "joker", "Aren't we all"));
-        Users.add(new GithubUsers("ISSSS", "Was?","wasn't it"));
-        Users.add(new GithubUsers("your", "my", "Ours"));
-        Users.add(new GithubUsers("friend", "Henemy", "yass"));
-        Users.add(new GithubUsers("Nyaahhhhclea", "I don know","Neither do i"));
+        users.add(new GithubUsers("James", "James", "James Org"));
+        users.add(new GithubUsers("baln", "Freaky ", "Murder Inc"));
+        users.add(new GithubUsers("Jason", "nyahaha", "Murder Inc"));
+        users.add(new GithubUsers("Mr Tickles", "Mr tickles", "Isle Of Perpetual Tickling"));
+        users.add(new GithubUsers("Bust a shot", "HARAM", "Haram"));
+        users.add(new GithubUsers("Insanity", "joker", "Aren't we all"));
+        users.add(new GithubUsers("ISSSS", "Was?", "wasn't it"));
+        users.add(new GithubUsers("your", "my", "Ours"));
+        users.add(new GithubUsers("friend", "Henemy", "yass"));
+        users.add(new GithubUsers("Nyaahhhhclea", "I don know", "Neither do i"));
 
     }
 
@@ -41,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mAdapter = new GitHubAdaptor(Users, this);
+        mAdapter = new GitHubAdaptor(users, this);
         mRecyclerView.setAdapter(mAdapter);
     }
 

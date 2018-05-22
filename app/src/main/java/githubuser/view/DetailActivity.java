@@ -6,7 +6,12 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.example.jakanakiwanuka.mrmlevelup.R;
-
+/**
+ * This class represents the Activity responsible for passing data from one recycler view to the
+ * detail view.
+ *
+ * @author Jakana Kiwanuka (Github: @jeancsanchez)
+ */
 public class DetailActivity extends AppCompatActivity {
 
     @Override

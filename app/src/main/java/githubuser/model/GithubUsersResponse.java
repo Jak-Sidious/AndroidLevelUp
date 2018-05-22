@@ -2,13 +2,21 @@ package githubuser.model;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.ArrayList;
+import java.util.List;
 
+/**
+ * A Response refers to return value form a server request.
+ * @author Jakana Kiwanuka
+ */
 public class GithubUsersResponse {
     @SerializedName("Users")
-    private ArrayList<GithubUsers> Users;
+    private List<GithubUsers> users;
 
-    public ArrayList<GithubUsers> getGithubUsers(){
-        return Users;
+    /**
+     * Public array list to return a user list.
+     * @return users
+     */
+    public List<GithubUsers> getGithubUsers() {
+        return users;
     }
 }
