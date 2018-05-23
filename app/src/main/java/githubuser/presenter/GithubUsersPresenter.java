@@ -1,5 +1,6 @@
 package githubuser.presenter;
 
+
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -9,7 +10,7 @@ import java.util.List;
 import githubuser.model.GithubUsers;
 import githubuser.model.GithubUsersResponse;
 import githubuser.service.GithubService;
-import githubuser.view.GitHubAdaptor;
+import githubuser.adapter.GitHubAdaptor;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

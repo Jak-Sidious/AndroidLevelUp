@@ -1,5 +1,4 @@
-//package adaptor;
-package githubuser.view;
+package githubuser.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,6 +14,7 @@ import com.example.jakanakiwanuka.mrmlevelup.R;
 import java.util.List;
 
 import githubuser.model.GithubUsers;
+import githubuser.view.DetailActivity;
 
 /**
  * An adaptor to cater to the generation of the RecyclerView.

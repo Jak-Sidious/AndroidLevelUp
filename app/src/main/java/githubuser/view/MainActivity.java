@@ -10,6 +10,7 @@ import com.example.jakanakiwanuka.mrmlevelup.R;
 import java.util.ArrayList;
 import java.util.List;
 
+import githubuser.adapter.GitHubAdaptor;
 import githubuser.model.GithubUsers;
 
 /**
