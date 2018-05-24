@@ -16,7 +16,7 @@ public class GithubUsers {
     @SerializedName("avatar_url")
     private final String profileImage; //tochange
 
-    @SerializedName("organization_url")
+    @SerializedName("organizations_url")
     private final String organizationUrl; //tochange
 
     /**
