@@ -9,8 +9,8 @@ import java.util.List;
  * @author Jakana Kiwanuka
  */
 public class GithubUsersResponse {
-    @SerializedName("Users")
-    private List<GithubUsers> users;
+    @SerializedName("items")
+    public List<GithubUsers> users;
 
     /**
      * Public array list to return a user list.
