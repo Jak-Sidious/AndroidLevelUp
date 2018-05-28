@@ -17,7 +17,7 @@ public class GithubService {
      * @return The API interface
      */
     public GitHubAPI getApi() {
-        String baseUrl = "http://api.github.com/";
+        String baseUrl = "https://api.github.com";
 
         if (retrofit == null) {
             retrofit = new Retrofit
