@@ -49,7 +49,7 @@ public class DetailActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent sharingIntent = new Intent(Intent.ACTION_SEND);
                 sharingIntent.setType("text/plain");
-                String shareBodyText = "Checkout this awesome developer @"+name+", "+org;
+                String shareBodyText = "Checkout this awesome developer @" + name + ", " + org;
                 sharingIntent.putExtra(Intent.EXTRA_SUBJECT, "Subject here");
                 sharingIntent.putExtra(Intent.EXTRA_TEXT, shareBodyText);
                 startActivity(sharingIntent);
