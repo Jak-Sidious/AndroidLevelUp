@@ -1,6 +1,7 @@
 package githubuser.view;
 
 
+
 import android.graphics.Color;
 import android.os.Handler;
 import android.os.Parcelable;
@@ -9,6 +10,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.ProgressBar;
+
 import com.example.jakanakiwanuka.mrmlevelup.R;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +28,7 @@ public class MainActivity extends AppCompatActivity
         implements GithubUsersPresenter.View {
 
     RecyclerView mRecyclerView;
+    SwipeRefreshLayout refreshLayout;
     RecyclerView.LayoutManager mLayoutManager;
     List<GithubUsers> users = new ArrayList();
     SwipeRefreshLayout refreshLayout;
@@ -38,7 +42,9 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        refreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_layout);
+        displayGitHubUsers(users);
+
+        refreshLayout = findViewById(R.id.swipe_layout);
         refreshLayout.setColorSchemeColors(Color.RED, Color.GREEN, Color.BLUE, Color.YELLOW);
         refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -53,6 +59,7 @@ public class MainActivity extends AppCompatActivity
                 presenter.getGithubUsers();
             }
         });
+
         if (savedInstanceState != null) {
             users = savedInstanceState.getParcelableArrayList(ALL_KEYS);
             displayGitHubUsers(users);
