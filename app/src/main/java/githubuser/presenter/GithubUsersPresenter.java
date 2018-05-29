@@ -5,7 +5,6 @@ import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import java.util.List;
-
 import githubuser.model.GithubUsers;
 import githubuser.model.GithubUsersResponse;
 import githubuser.service.GithubService;
@@ -34,12 +33,25 @@ public class GithubUsersPresenter {
 
     }
 
+    /**
+     * Interface method to deal with the change of orientation.
+     */
+    public interface ViewGitHubUsers {
+        /**
+         * Method to display the github Users.
+         * @param userList Array list containing users.
+         */
+        void displayGitHubUsers(List<GithubUsers> userList);
+    }
+
 
     /**
      * Method to get github Users.
      *  @param recyclerView create the view to display the data
      */
     public void getGithubUsers(final RecyclerView recyclerView) {
+//          final MainActivity mainActivity
+
         gitService
                 .getApi()
                 .getGithubUsers()
@@ -53,6 +65,7 @@ public class GithubUsersPresenter {
                                        context);
                                recyclerView.setAdapter(adapter);
                                recyclerView.setScrollingTouchSlop(0);
+//                                 mainActivity.displayGitHubUsers(githubUsersList);
                            }
                     }
 

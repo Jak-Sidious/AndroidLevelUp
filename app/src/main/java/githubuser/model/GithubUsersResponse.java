@@ -2,7 +2,9 @@ package githubuser.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
 import java.util.List;
+
 
 /**
  * A Response refers to return value form a server request.
@@ -10,7 +12,7 @@ import java.util.List;
  */
 public class GithubUsersResponse {
     @SerializedName("items")
-    public List<GithubUsers> users;
+    public List<GithubUsers> users = new ArrayList();
 
     /**
      * Public array list to return a user list.
