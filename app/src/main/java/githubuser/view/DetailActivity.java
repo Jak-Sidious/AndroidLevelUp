@@ -1,8 +1,10 @@
 package githubuser.view;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -32,8 +34,8 @@ public class DetailActivity extends AppCompatActivity {
         // GET DATA
         Intent intent = getIntent();
         String image = intent.getExtras().getString("githubImage");
-        String name = intent.getExtras().getString("githubUser");
-        String org = intent.getExtras().getString("userOrg");
+        final String name = intent.getExtras().getString("githubUser");
+        final String org = intent.getExtras().getString("userOrg");
 
         //BIND DATA
         Glide.with(this)
@@ -41,5 +43,17 @@ public class DetailActivity extends AppCompatActivity {
                 .into(imageView);
         username.setText(name);
         github.setText(org);
+        FloatingActionButton share = findViewById(R.id.shareButton);
+        share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+                sharingIntent.setType("text/plain");
+                String shareBodyText = "Checkout this awesome developer @"+name+", "+org;
+                sharingIntent.putExtra(Intent.EXTRA_SUBJECT, "Subject here");
+                sharingIntent.putExtra(Intent.EXTRA_TEXT, shareBodyText);
+                startActivity(sharingIntent);
+            }
+        });
     }
 }
