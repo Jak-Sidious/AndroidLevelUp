@@ -13,6 +13,6 @@ public interface GitHubAPI {
      * Interface implementation.
      * @return getGithubUsers the method to get all github users
      */
-    @GET("/search/users?q=location:nairobi+language:java&per_page=10&sort=followers")
+    @GET("/search/users?q=location:nairobi+language:java&per_page=40&sort=followers")
     Call<GithubUsersResponse> getGithubUsers();
 }
