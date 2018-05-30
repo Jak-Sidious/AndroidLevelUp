@@ -23,12 +23,13 @@ public class NetworkConnectivity {
 
     /**
      * Boolean to check if wifi is connected or not.
-     * @return networkInfo
+     * @return activeNetwork
      */
     public boolean isWifiConnected() {
         ConnectivityManager connMan = (ConnectivityManager)
                 context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connMan.getActiveNetworkInfo();
-        return networkInfo != null && networkInfo.isConnected();
+        assert connMan != null;
+        NetworkInfo activeNetwork = connMan.getActiveNetworkInfo();
+        return activeNetwork != null && activeNetwork.isConnectedOrConnecting();
     }
 }
