@@ -54,9 +54,9 @@ public class MainActivity extends AppCompatActivity
 
                     }
                 }, 3000);
-//                presenter.getGithubUsers();
             }
         });
+
 
         if (savedInstanceState != null) {
             users = savedInstanceState.getParcelableArrayList(ALL_KEYS);
@@ -94,5 +94,4 @@ public class MainActivity extends AppCompatActivity
             }
         });
     }
-
 }

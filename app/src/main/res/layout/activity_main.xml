@@ -22,4 +22,5 @@
             tools:listitem="@layout/content_main"/>
 
         </android.support.v4.widget.SwipeRefreshLayout>
-</FrameLayout>
+    </FrameLayout>
+
