@@ -10,7 +10,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.ProgressBar;
 
 import com.example.jakanakiwanuka.mrmlevelup.R;
 import java.util.ArrayList;
@@ -31,7 +30,6 @@ public class MainActivity extends AppCompatActivity
     SwipeRefreshLayout refreshLayout;
     RecyclerView.LayoutManager mLayoutManager;
     List<GithubUsers> users = new ArrayList();
-    SwipeRefreshLayout refreshLayout;
     private final GithubUsersPresenter presenter =
             new GithubUsersPresenter(this);
     static final  String ALL_KEYS = "list_state";
