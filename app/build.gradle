@@ -1,11 +1,12 @@
 apply plugin: 'com.android.application'
 apply from: '../app/code_quality_tools/quality.gradle'
+apply from: '../gradle/githooks.gradle'
 
 android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.example.jakanakiwanuka.mrmlevelup"
-        minSdkVersion 23
+        minSdkVersion 15
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
@@ -36,5 +37,3 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.squareup.picasso:picasso:2.4.0'
 }
-
-apply from: '../gradle/githooks.gradle'

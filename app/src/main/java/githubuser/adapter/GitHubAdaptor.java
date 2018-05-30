@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.example.jakanakiwanuka.mrmlevelup.R;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import githubuser.model.GithubUsers;
@@ -21,7 +22,7 @@ import githubuser.view.DetailActivity;
  * An adaptor to cater to the generation of the RecyclerView.
  */
 public class GitHubAdaptor extends RecyclerView.Adapter<GitHubAdaptor.UserViewHolder> {
-    List<GithubUsers> users;
+    List<GithubUsers> users = new ArrayList();
     Context context;
 
     /**
