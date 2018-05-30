@@ -19,61 +19,40 @@ import githubuser.presenter.GithubUsersPresenter;
  * @author jakanakiwanuka
  */
 public class MainActivity extends AppCompatActivity
-        implements GithubUsersPresenter.ViewGitHubUsers {
+        implements GithubUsersPresenter.View {
 
     RecyclerView mRecyclerView;
-    RecyclerView.Adapter mAdapter;
     RecyclerView.LayoutManager mLayoutManager;
     List<GithubUsers> users = new ArrayList();
     private final GithubUsersPresenter presenter =
-            new GithubUsersPresenter(MainActivity.this);
+            new GithubUsersPresenter(this);
     static final  String ALL_KEYS = "list_state";
-    Parcelable liststate;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        displayGitHubUsers(users);
 
         if (savedInstanceState != null) {
-            presenter.getGithubUsers(mRecyclerView);
-            onRestoreInstanceState(savedInstanceState);
+            users = savedInstanceState.getParcelableArrayList(ALL_KEYS);
+            displayGitHubUsers(users);
         } else {
-            presenter.getGithubUsers(mRecyclerView);
+            presenter.getGithubUsers();
         }
     }
 
     @Override
     protected void onSaveInstanceState(Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
-        liststate = mLayoutManager.onSaveInstanceState();
-        savedInstanceState.putParcelable(ALL_KEYS, liststate);
+        savedInstanceState.putParcelableArrayList(ALL_KEYS,
+                (ArrayList<? extends Parcelable>) users);
     }
 
     @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        if (savedInstanceState != null) {
-            liststate = savedInstanceState.getParcelable(ALL_KEYS);
-            displayRecycleView(users);
-        }
-        super.onRestoreInstanceState(savedInstanceState);
-    }
-
-    /**
-     * Method to display the RecycleView.
-     * @param user ArrayList that is parameter
-     */
-    public void displayRecycleView(List<GithubUsers> user) {
-        RecyclerView.Adapter adapter = new GitHubAdaptor(users, this);
-        mRecyclerView.setAdapter(adapter);
-    }
-
-    @Override
-    public void displayGitHubUsers(List<GithubUsers> use) {
-        users = use;
+    public void displayGitHubUsers(List<GithubUsers> usersList) {
+        users = usersList;
         mRecyclerView = findViewById(R.id.users_list);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
@@ -81,4 +60,5 @@ public class MainActivity extends AppCompatActivity
         RecyclerView.Adapter adapter = new GitHubAdaptor(users, this);
         mRecyclerView.setAdapter(adapter);
     }
+
 }

@@ -1,14 +1,15 @@
 package githubuser.presenter;
 
 
-import android.content.Context;
-import android.support.v7.widget.RecyclerView;
+
 import android.util.Log;
+
+
 import java.util.List;
+
 import githubuser.model.GithubUsers;
 import githubuser.model.GithubUsersResponse;
 import githubuser.service.GithubService;
-import githubuser.adapter.GitHubAdaptor;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -17,15 +18,15 @@ import retrofit2.Response;
  * @author Jakana Kiwanuka
  */
 public class GithubUsersPresenter {
+    public View view;
     private GithubService gitService;
-    public final Context context; //change later
 
     /**
      * Public declaration of the presenter.
-     * @param context the data to be passed to the presenter
+     * @param view represents the main activity
      */
-    public GithubUsersPresenter(Context context) {
-        this.context = context;
+    public GithubUsersPresenter(View view) {
+        this.view = view;
 
         if (gitService == null) {
             this.gitService = new GithubService();
@@ -36,7 +37,7 @@ public class GithubUsersPresenter {
     /**
      * Interface method to deal with the change of orientation.
      */
-    public interface ViewGitHubUsers {
+    public interface View {
         /**
          * Method to display the github Users.
          * @param userList Array list containing users.
@@ -47,10 +48,8 @@ public class GithubUsersPresenter {
 
     /**
      * Method to get github Users.
-     *  @param recyclerView create the view to display the data
      */
-    public void getGithubUsers(final RecyclerView recyclerView) {
-//          final MainActivity mainActivity
+    public void getGithubUsers() {
 
         gitService
                 .getApi()
@@ -59,14 +58,14 @@ public class GithubUsersPresenter {
                     @Override
                     public void onResponse(Call<GithubUsersResponse> call,
                                            Response<GithubUsersResponse> response) {
-                       List<GithubUsers> githubUsersList = response.body().getGithubUsers();
-                           if (githubUsersList != null) {
-                               RecyclerView.Adapter adapter = new GitHubAdaptor(githubUsersList,
-                                       context);
-                               recyclerView.setAdapter(adapter);
-                               recyclerView.setScrollingTouchSlop(0);
-//                                 mainActivity.displayGitHubUsers(githubUsersList);
-                           }
+
+                        GithubUsersResponse userResponse = response.body();
+                        List<GithubUsers> gitHubUsersList;
+
+                        assert userResponse != null;
+
+                        gitHubUsersList = userResponse.getGithubUsers();
+                        view.displayGitHubUsers(gitHubUsersList);
                     }
 
 
