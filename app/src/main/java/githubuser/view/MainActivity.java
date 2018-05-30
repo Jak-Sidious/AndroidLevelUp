@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity
 
                     }
                 }, 3000);
-                presenter.getGithubUsers();
+//                presenter.getGithubUsers();
             }
         });
 
