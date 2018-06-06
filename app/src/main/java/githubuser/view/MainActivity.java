@@ -140,7 +140,7 @@ public class MainActivity extends AppCompatActivity
         users = usersList;
         mRecyclerView = findViewById(R.id.users_list);
         mRecyclerView.setHasFixedSize(true);
-        mLayoutManager = new GridLayoutManager(this, 3);
+        mLayoutManager = new GridLayoutManager(this, 2);
         mRecyclerView.setLayoutManager(mLayoutManager);
         RecyclerView.Adapter adapter = new GitHubAdaptor(users, this);
         mRecyclerView.setAdapter(adapter);
