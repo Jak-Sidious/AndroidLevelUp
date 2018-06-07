@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/Jak-Sidious/AndroidLevelUp/tree/Develop.svg?style=svg)](https://circleci.com/gh/Jak-Sidious/AndroidLevelUp/tree/Develop)
+
 # AndroidLevelUp
 
 This is an android Level up Project in which the githubAPI is used to retrieve users in Nairobi
