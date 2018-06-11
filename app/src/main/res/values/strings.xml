@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">MrmLevelUp</string>
+    <string name="app_name">Git Hub Users</string>
+    <string name="user_image">User Image</string>
+    <string name="Github_username">TextView</string>
+    <string name="github_username">Github UserName</string>
+    <string name="user_organisation">User\'s Organisation</string>
+    <string name="title_activity_detail">detail</string>
+    <string name="no_connection">No internet connection</string>
 </resources>
